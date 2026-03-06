@@ -30,7 +30,7 @@ def load_obj(filename):
 
 
 def extract_outer_face(vertices, faces):
-    """最大頂点数のfaceを外周とみなす"""
+    """Take the face with maximum vertices as the outline."""
 
     outer_face = max(faces, key=len)
 
@@ -43,10 +43,10 @@ def plot_polygon(vertices, polygon):
 
     plt.figure(figsize=(6,6))
 
-    # 全頂点
+    # Vertices
     plt.scatter(vertices[:,0], vertices[:,1], s=10)
 
-    # 外周
+    # Outline
     poly_closed = np.vstack([polygon, polygon[0]])
 
     plt.plot(poly_closed[:,0], poly_closed[:,1], linewidth=2)
@@ -63,7 +63,7 @@ def plot_polygon(vertices, polygon):
 
 def main():
 
-    vertices, faces = load_obj("Femur_0.obj")
+    vertices, faces = load_obj("Femur_mm_0.obj")
 
     polygon = extract_outer_face(vertices, faces)
 
