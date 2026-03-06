@@ -63,7 +63,7 @@ def plot_polygon(vertices, polygon):
 
 def main():
 
-    vertices, faces = load_obj("Femur_mm_0.obj")
+    vertices, faces = load_obj("Femur_0.obj")
 
     polygon = extract_outer_face(vertices, faces)
 
